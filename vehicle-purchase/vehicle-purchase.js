@@ -37,14 +37,14 @@ export function chooseVehicle(option1, option2) {
   console.log(a);
    console.log(b);
 
-  if (a>b){
+  if (a<b){
     console.log(option1);
-    return (option2  + " is clearly the better choice.");
+    return (option1  + " is clearly the better choice.");
    // return true;
   }
    else {
     console.log(option2);
-  return (option1 + " is clearly the better choice.");
+  return (option2 + " is clearly the better choice.");
   }
 }
 
@@ -57,5 +57,25 @@ export function chooseVehicle(option1, option2) {
  * @returns expected resell price in the dealership
  */
 export function calculateResellPrice(originalPrice, age) {
-  throw new Error('Please implement the calculateResellPrice function');
+  //throw new Error('Please implement the calculateResellPrice function');
+  console.log(originalPrice , age);
+  if (age<3){
+    console.log(originalPrice*(80/100));
+   return originalPrice*(80/100);
+    
+  }
+ else if(age>10){
+        console.log(originalPrice*(50/100));
+        return(originalPrice*(50/100))  
+    }
+     
+        else if(age>3&& age<10){
+      console.log(originalPrice*(70/100));
+      return(originalPrice*(70/100))
+   }
+  
+   else if (age>=3){
+     console.log(originalPrice*(70/100));
+     return(originalPrice*(70/100))
+   }
 }
