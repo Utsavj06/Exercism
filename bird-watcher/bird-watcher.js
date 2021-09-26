@@ -12,12 +12,12 @@
  */
 export function totalBirdCount(birdsPerDay) {
   //throw new Error('Please implement the totalBirdCount function');
-  //console.log(birdsPerDay);
+  //console.log(birdsPerDay)
   var count =0;
   for( var i=0 ; i<=birdsPerDay.length-1 ; i++){
        count += birdsPerDay[i];
     }
-  //console.log(count);
+  console.log(count);
   return count;
 }
 
@@ -30,18 +30,47 @@ export function totalBirdCount(birdsPerDay) {
  */
 export function birdsInWeek(birdsPerDay, week) {
  // throw new Error('Please implement the birdsInWeek function');
-  console.log(birdsPerDay.length);
-  console.log(week);
-  var division = birdsPerDay.length/week;
-  console.log(division);
-   var newcount = 0;
-  for (var i=0 ; i<=birdsPerDay.length-1 ;i++){
-    if (i<=division){
-       newcount += birdsPerDay[i];
-    }
+   console.log(birdsPerDay , week);
+  // var newCount = (birdsPerDay.length)/(week);
+  // console.log(newCount);
+  // var inc =0;
+  // for( var i = 0 ; i<birdsPerDay.length-1 ; i++){
+  //   // console.log("a");
+  //   if(i<newCount){
+  //     inc += birdsPerDay[i];
+  //   }
+  // } 
+  // console.log(inc);
+  // return inc
+  var add = 0;
+  if (week <= 1 ){
+    for (var i = 0 ; i<birdsPerDay.length-1 ; i++){
+      if(i<7){
+        add += birdsPerDay[i];
+      }
+    } //console.log(add);
+    return add
   }
-  //console.log(newcount);
-  return newcount;
+  else if (week = 2){
+    for (var i = 0 ; i<birdsPerDay.length-1 ; i++){
+      if(i>7 & i<14)
+      {
+         add += birdsPerDay[i];
+      }
+    } //console.log(add);
+     return add
+  }
+
+  else if(week = 21){
+     console.log(birdsPerDay , week);
+    for (var i = 0 ; i<birdsPerDay.length-1 ; i++){
+      if(i>7 & i<14)
+      {
+         add += birdsPerDay[i];
+      }
+    } console.log(add);
+     return add
+  }
 }
 
 /**
@@ -53,4 +82,9 @@ export function birdsInWeek(birdsPerDay, week) {
  */
 export function fixBirdCountLog(birdsPerDay) {
  // throw new Error('Please implement the fixBirdCountLog function');
+  console.log(birdsPerDay)
+
+  for (var i = 0 ; i<birdsPerDay-1 ; i+2){
+    console.log(birdsPerDay[i])
+  }
 }
