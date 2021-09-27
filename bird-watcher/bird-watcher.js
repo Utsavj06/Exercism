@@ -30,47 +30,24 @@ export function totalBirdCount(birdsPerDay) {
  */
 export function birdsInWeek(birdsPerDay, week) {
  // throw new Error('Please implement the birdsInWeek function');
-   console.log(birdsPerDay , week);
-  // var newCount = (birdsPerDay.length)/(week);
-  // console.log(newCount);
-  // var inc =0;
-  // for( var i = 0 ; i<birdsPerDay.length-1 ; i++){
-  //   // console.log("a");
-  //   if(i<newCount){
-  //     inc += birdsPerDay[i];
-  //   }
-  // } 
-  // console.log(inc);
-  // return inc
-  var add = 0;
-  if (week <= 1 ){
-    for (var i = 0 ; i<birdsPerDay.length-1 ; i++){
-      if(i<7){
-        add += birdsPerDay[i];
-      }
-    } //console.log(add);
-    return add
-  }
-  else if (week = 2){
-    for (var i = 0 ; i<birdsPerDay.length-1 ; i++){
-      if(i>7 & i<14)
-      {
-         add += birdsPerDay[i];
-      }
-    } //console.log(add);
-     return add
-  }
 
-  else if(week = 21){
-     console.log(birdsPerDay , week);
-    for (var i = 0 ; i<birdsPerDay.length-1 ; i++){
-      if(i>7 & i<14)
-      {
-         add += birdsPerDay[i];
-      }
-    } console.log(add);
-     return add
-  }
+ let sum = 0;
+ 
+    // if((week)*7 > birdsPerDay.length){
+    //     return;
+    // }else{
+       
+        let s = (week*7) -7; 
+  console.log(s)
+       let i = s;
+      while (i<s+7 ){
+        //for( let i=s; i<s+7 ; i++){
+            sum = sum + birdsPerDay[i];
+            i++;
+        }  
+  //  }
+  console.log(sum);
+    return sum;
 }
 
 /**
@@ -82,9 +59,16 @@ export function birdsInWeek(birdsPerDay, week) {
  */
 export function fixBirdCountLog(birdsPerDay) {
  // throw new Error('Please implement the fixBirdCountLog function');
-  console.log(birdsPerDay)
-
-  for (var i = 0 ; i<birdsPerDay-1 ; i+2){
-    console.log(birdsPerDay[i])
-  }
+  console.log(birdsPerDay);
+  
+    for (var i = 0 ; i<birdsPerDay.length-1 ; i++){ 
+      if(i%2 == 0){
+        birdsPerDay[i] += 1 
+      }
+      else {
+        birdsPerDay[i] = birdsPerDay[i];
+      }
+      console.log(birdsPerDay[i]);
+    }
+  return birdsPerDay;
 }
