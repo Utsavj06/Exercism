@@ -41,17 +41,20 @@ export function limesToCut(wedgesNeeded, limes) {
   //throw new Error('Please implement the limesToCut function');
   // console.log(wedgesNeeded)
   console.log(limes)
-var i = 0;
-  //while(i < wedgesNeeded)
-  switch (limes) {
-    case 'small' : console.log("wedgesNeededao;k" );
-      break ;
-    case 'medium' : console.log("wedgesNeededaoqwuiqw" );
-      break ;
-    case 'large' : console.log("wedgesNeededaocoppy" );
-      break;
-      default : break;
-  }
+   var limesCount = 0; var count = 0; var i = 0; var limeAdd = 0;
+   for ( var j = 0 ; j < limes.length ;j++) {
+   while(i <= j && limeAdd < wedgesNeeded){
+   switch (limes[j]) {
+     case 'small' : limeAdd = limeAdd+ 6;  console.log(limeAdd , limes[j]); count += 1; break;
+     
+     case 'medium' : limeAdd = limeAdd+8; console.log(limeAdd, limes[j]); count += 1; break;
+      
+     case 'large' :limeAdd = limeAdd+10; console.log(limeAdd, limes[j]); count += 1; break;
+     
+      default :  break;
+      }  i++;
+     }
+  } console.log(count); return count;
 }
 
 /**
@@ -62,5 +65,25 @@ var i = 0;
  * @returns {string[]} remaining orders after the time is up
  */
 export function remainingOrders(timeLeft, orders) {
-  throw new Error('Please implement the remainingOrders function');
+  //throw new Error('Please implement the remainingOrders function');
+//console.log(timeLeft , orders);
+ let j = 0; 
+  for (var i = 0 ; i < orders.length ; i++){
+     while(timeLeft > 0 ){
+      switch (orders[i]){
+       case "Pure Strawberry Joy" :  timeLeft = timeLeft-0.5; orders.splice(0 , 1);
+      break;
+       case 'Energizer' :  timeLeft = timeLeft-1.5; orders.splice(0, 1);
+       break;
+      case 'Green Garden' :   timeLeft = timeLeft-1.5; orders.splice(0, 1);
+       break;
+      case 'Tropical Island' :  timeLeft = timeLeft-3;   orders.splice(0 , 1);
+       break;
+      case 'All or Nothing' :  timeLeft = timeLeft-5; orders.splice(0, 1);
+       break;
+      default :  timeLeft = timeLeft-2.5; orders.splice(0, 1);
+       break;
+      } j++; 
+    } 
+ }  console.log(timeLeft); console.log(orders);  return (orders);
 }
