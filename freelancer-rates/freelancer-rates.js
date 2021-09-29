@@ -27,6 +27,7 @@
  */
 export function dayRate(ratePerHour) {
  // throw new Error('Implement the dayRate function');
+  console.log(ratePerHour);
   return ratePerHour*8
 }
 
@@ -39,11 +40,7 @@ export function dayRate(ratePerHour) {
  */
 export function monthRate(ratePerHour, discount) {
   //throw new Error('Implement the monthRate function');
-  if (discount>0){
-     return Math.ceil((ratePerHour*176)-(ratePerHour*176*discount))
-  }
-  else
-  return ratePerHour*176
+   return Math.ceil(22 * dayRate(ratePerHour) * ((1 - discount)));
 }
 
 /**
@@ -56,33 +53,8 @@ export function monthRate(ratePerHour, discount) {
  */
 export function daysInBudget(budget, ratePerHour, discount) {
   //throw new Error('Implement the daysInBudget function');
- 
-   if(discount== 0.05 && ratePerHour==89.89){
-    return Math.floor((budget/(8*ratePerHour))+1)
-  }
- else if(discount== 0.05 && ratePerHour==25){
-    return Math.floor((budget/(8*ratePerHour))+2)
-  }
-     else if(discount== 0.05 && ratePerHour==31.4){
-    return Math.floor((budget/(8*ratePerHour))+2)
-  }
-
-       else if(discount== 0.05 && ratePerHour==97.654321){
-    return Math.floor((budget/(8*ratePerHour))+1)
-  }
-     
-     else if(discount== 0.05 && ratePerHour==31.4){
-    return Math.floor((budget/(8*ratePerHour))+2)
-  }
-  else if(discount== 0.05){
-    return Math.floor((budget/(8*ratePerHour))-1)
-  }
- 
-
-   else if(discount== 0.3){
-    return Math.floor((budget/(8*ratePerHour))+3)
-  }
-  return Math.floor(budget/(8*ratePerHour));
+ console.log(budget, ratePerHour, discount)
+  return Math.floor(budget/(ratePerHour * (1-discount) * 8))   
 }
 
 /**
