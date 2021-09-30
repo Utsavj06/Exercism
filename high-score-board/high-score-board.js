@@ -75,13 +75,12 @@ export function updateScore(scoreBoard, player, points) {
 export function applyMondayBonus(scoreBoard) {
  // throw new Error('Please implement the applyMondayBonus function');
   console.log(scoreBoard);
-
-  for (var i in scoreBoard){
-    scoreBoard[i]+=100;
-    console.log(`${i}: ${scoreBoard[i]}`);
-    
-  }return (`${i}: ${scoreBoard[i]}`);
- // return abc;
+//console.log(`${Object.keys(scoreBoard)} ";" ${Object.values(scoreBoard)}`);
+   for (var i in scoreBoard){
+     scoreBoard[i]+=100;
+     console.log(`${i}: ${scoreBoard[i]}`);
+   
+   } return scoreBoard
 }
 
 /**
@@ -92,11 +91,12 @@ export function applyMondayBonus(scoreBoard) {
  */
 export function normalizeScore(params) {
   //throw new Error('Please implement the normalizeScore function');
-
-  // console.log(params);
-  // const normalizeFunction = (score) => {
-  //   console.log(score);
-  // }
+var abc = params.score;
+   //console.log(abc);
+  var bcd = params.normalisationFunction;
+   function bcd(abc){
+     console.log(abc);
+   }
 
   //return ((params.score*3)-10);
 }
